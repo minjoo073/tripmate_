@@ -1,8 +1,6 @@
+/* TripMate web font — Pretendard 단일 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 @import "tailwindcss";
-
-/* TripMate web fonts — same source as the app (tripmate/constants/colors.ts Font.base/serif) */
-@import url("https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 
 @theme {
   /* ── Color — sourced from tripmate/constants/colors.ts ────────────────── */
@@ -32,9 +30,9 @@
   --color-point-yellow: #e8c882;
   --color-point-teal: #b4d9cc;
 
-  /* ── Font ─────────────────────────────────────────────────────────────── */
-  --font-sans: "SUIT", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  /* ── Font — Pretendard 단일 통일 (sans = serif 같은 값) ───────────────── */
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-serif: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
 
   /* ── Radius ───────────────────────────────────────────────────────────── */
   --radius-xs: 8px;
@@ -68,7 +66,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* font-editorial은 같은 Pretendard지만 weight light + tracking으로 위계 구분 */
 .font-editorial {
-  font-family: var(--font-serif);
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* ── Quiet-luxury polish — uses tokens only, no new values ─────────────── */
+::selection {
+  background: var(--color-accent-light);
+  color: var(--color-text-primary);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
 }
