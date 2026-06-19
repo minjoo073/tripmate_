@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* TripMate web fonts — same source as the app (tripmate/constants/colors.ts Font.base/serif) */
+@import url("https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+
+@theme {
+  /* ── Color — sourced from tripmate/constants/colors.ts ────────────────── */
+  --color-primary: #3b5178;
+  --color-primary-light: #ebf0f8;
+  --color-accent: #c98b96;
+  --color-accent-light: #f4e6e9;
+  --color-olive: #6e7d62;
+  --color-dust-blue: #6b8cad;
+  --color-mute-gold: #c6a56a;
+
+  --color-dark-bg: #1e222a;
+
+  --color-bg: #f5f8fc;
+  --color-bg-deep: #ebf0f6;
+  --color-bg-card: #fafcff;
+  --color-card: #ffffff;
+  --color-card-border: #dde4ee;
+
+  --color-text-primary: #1c2b3a;
+  --color-text-secondary: #5b6e82;
+  --color-text-muted: #8ea0b5;
+  --color-text-on-dark: #ffffff;
+
+  --color-success: #b4d9cc;
+  --color-red: #c05050;
+  --color-point-yellow: #e8c882;
+  --color-point-teal: #b4d9cc;
+
+  /* ── Font ─────────────────────────────────────────────────────────────── */
+  --font-sans: "SUIT", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  /* ── Radius ───────────────────────────────────────────────────────────── */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ── Shadow — Elevation 스케일을 box-shadow로 변환 ────────────────────── */
+  --shadow-sm: 0 2px 8px rgba(28, 43, 58, 0.1);
+  --shadow-md: 0 6px 18px rgba(28, 43, 58, 0.12);
+  --shadow-lg: 0 14px 32px rgba(20, 32, 48, 0.18);
+  --shadow-xl: 0 24px 48px rgba(16, 26, 40, 0.28);
+  --shadow-primary: 0 8px 20px rgba(59, 81, 120, 0.32);
+}
+
+/* ── Base reset ─────────────────────────────────────────────────────────── */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
