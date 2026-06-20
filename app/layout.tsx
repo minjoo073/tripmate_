@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { RevealInit } from "@/components/RevealInit";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,7 +33,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="h-full scroll-smooth antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <style>{`
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity 700ms cubic-bezier(0.22,1,0.36,1),transform 700ms cubic-bezier(0.22,1,0.36,1)}
+[data-reveal][data-revealed="true"]{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+`}</style>
+      </head>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <RevealInit />
+      </body>
     </html>
   );
 }

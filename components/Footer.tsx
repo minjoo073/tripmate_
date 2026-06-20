@@ -46,7 +46,7 @@ export function Footer() {
                 TripMate
               </span>
             </div>
-            <p className="m-0 text-[14px] leading-[1.8] text-white/50">
+            <p className="m-0 text-[14px] leading-[1.8] text-white/65">
               혼자가 아닌, 함께하는 여행을
               <br />
               만들어드립니다. AI가 찾아주는
@@ -57,7 +57,7 @@ export function Footer() {
 
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <div className="mb-[18px] text-[10px] font-bold uppercase tracking-[0.22em] text-mute-gold">
+              <div className="mb-[18px] text-[12px] font-semibold tracking-[0.02em] text-white/65">
                 {col.title}
               </div>
               <ul className="flex flex-col gap-3">
@@ -65,7 +65,7 @@ export function Footer() {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="text-[14px] text-white/60 transition-colors hover:text-white"
+                      className="text-[14px] text-white/70 transition-colors hover:text-white"
                     >
                       {l.label}
                     </a>

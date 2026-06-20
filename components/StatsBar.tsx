@@ -16,20 +16,22 @@ function SocialIcon({
     <a
       href="#"
       aria-label={label}
-      className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-primary-light text-primary transition hover:brightness-95"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full text-primary transition hover:bg-primary-light/60 md:h-10 md:w-10"
     >
-      {children}
+      <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-primary-light">
+        {children}
+      </span>
     </a>
   );
 }
 
 export function StatsBar() {
   return (
-    <section className="border-y border-card-border bg-card py-[18px]">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-5 px-6 sm:px-10 md:flex-row md:justify-between">
+    <section data-reveal className="border-y border-card-border bg-bg py-7">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-6 px-6 sm:px-10 md:flex-row md:justify-between md:gap-10">
         {/* Follow */}
-        <div className="flex items-center gap-[14px]">
-          <span className="text-[12px] font-medium tracking-wider text-text-muted">
+        <div className="flex items-center gap-[10px] md:gap-[14px]">
+          <span className="text-[12px] font-medium tracking-wider text-text-secondary">
             팔로우
           </span>
           <SocialIcon label="Facebook">
@@ -50,20 +52,20 @@ export function StatsBar() {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
+        <div className="grid w-full grid-cols-2 gap-y-5 md:flex md:w-auto md:items-center md:gap-x-9">
           {STATS.map((s, i) => (
-            <div key={s.label} className="flex items-center gap-x-9">
+            <div key={s.label} className="flex items-center md:gap-x-9">
               {i > 0 && (
                 <span
                   aria-hidden
                   className="hidden h-8 w-px bg-card-border md:inline-block"
                 />
               )}
-              <div className="flex flex-col items-center gap-[2px]">
-                <span className="text-[18px] font-extrabold tracking-[-0.03em] text-text-primary">
+              <div className="flex w-full flex-col items-center gap-[4px]">
+                <span className="text-[28px] font-extrabold tracking-[-0.03em] text-text-primary">
                   {s.value}
                 </span>
-                <span className="text-[11px] font-medium tracking-wider text-text-muted">
+                <span className="text-[12px] font-medium tracking-[0.02em] text-text-secondary">
                   {s.label}
                 </span>
               </div>

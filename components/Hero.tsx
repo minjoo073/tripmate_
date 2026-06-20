@@ -6,10 +6,10 @@ export function Hero() {
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-stretch gap-10 px-6 pb-[52px] pt-[72px] sm:px-10 md:min-h-[560px] md:flex-row md:items-center md:gap-[52px]">
         {/* Left: text */}
         <div className="flex flex-col gap-7 md:flex-[0_0_420px]">
-          <span className="text-[11px] font-bold uppercase italic tracking-[0.22em] text-text-muted">
+          <span className="text-[12px] font-semibold tracking-[0.04em] text-text-secondary">
             AI 여행 메이트 매칭
           </span>
-          <h1 className="m-0 text-[44px] font-extrabold leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[58px]">
+          <h1 className="m-0 text-[44px] font-extrabold leading-[1.15] tracking-[-0.03em] text-text-primary sm:text-[58px] sm:leading-[1.08]">
             혼자가
             <br />
             두렵다면,
@@ -17,33 +17,19 @@ export function Hero() {
             <span className="text-primary">함께</span> 떠나세요.
           </h1>
 
-          <div className="mt-1 flex items-center gap-[14px]">
+          <div className="mt-1">
             <a
               href="#download"
               className="inline-flex items-center gap-2 rounded-pill bg-primary px-[30px] py-[14px] text-[15px] font-semibold text-text-on-dark shadow-[0_10px_28px_rgba(59,81,120,0.38)] transition hover:brightness-[1.08] hover:-translate-y-px"
             >
               지금 무료로 시작하기
             </a>
-            <button
-              type="button"
-              aria-label="다음 슬라이드"
-              className="flex h-[42px] w-[42px] items-center justify-center rounded-full border-[1.5px] border-card-border bg-card text-[18px] font-light text-primary transition hover:bg-primary-light"
-            >
-              ›
-            </button>
-          </div>
-
-          {/* Slide dots */}
-          <div className="mt-1 flex items-center gap-[10px]">
-            <span className="h-2 w-2 rounded-full bg-primary" />
-            <span className="h-[7px] w-[22px] rounded-pill bg-primary opacity-25" />
-            <span className="h-2 w-2 rounded-full bg-card-border" />
           </div>
         </div>
 
         {/* Right: image + floating card */}
         <div className="relative min-h-[320px] flex-1 md:min-h-[460px]">
-          <div className="relative h-[320px] w-full overflow-hidden rounded-[28px] md:h-[460px]">
+          <div className="relative h-[320px] w-full overflow-hidden rounded-[22px] md:h-[460px]">
             <Image
               src="/dest/osaka.jpg"
               alt="오사카"
@@ -55,7 +41,7 @@ export function Hero() {
           </div>
 
           {/* Floating card */}
-          <div className="absolute bottom-[18px] right-[16px] flex min-w-[210px] flex-col gap-3 rounded-[18px] bg-card px-5 py-4 shadow-[0_10px_32px_rgba(28,43,58,0.16)] sm:bottom-7 sm:right-6">
+          <div className="absolute bottom-[18px] right-[16px] flex min-w-[180px] flex-col gap-3 rounded-[18px] bg-card px-5 py-4 shadow-[0_10px_32px_rgba(28,43,58,0.16)] md:bottom-7 md:right-6 md:min-w-[210px]">
             <div className="flex items-center justify-between">
               <span className="text-[13px] font-bold text-text-primary">
                 인기 여행지
@@ -85,7 +71,7 @@ export function Hero() {
                 <div className="text-[11px] font-bold text-primary">
                   23,400+ 메이트
                 </div>
-                <div className="mt-[1px] text-[11px] text-text-muted">
+                <div className="mt-[1px] text-[11px] text-text-secondary">
                   함께 여행 중
                 </div>
               </div>

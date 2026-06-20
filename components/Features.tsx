@@ -32,34 +32,24 @@ function PinIcon() {
 
 export function Features() {
   return (
-    <section id="features" className="bg-card pb-[88px] pt-20">
+    <section id="features" data-reveal className="bg-card pb-[88px] pt-20">
       <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-10">
         {/* Header */}
-        <div className="mb-11 flex items-start justify-between gap-6">
+        <div className="mb-11 flex items-end justify-between gap-6">
           <div>
             <h2 className="m-0 mb-2 text-[34px] font-extrabold tracking-[-0.02em] text-text-primary">
               인기 여행지
             </h2>
-            <p className="m-0 text-[15px] text-text-muted">
+            <p className="m-0 text-[16px] text-text-secondary">
               나와 함께 떠날 메이트를 TripMate에서 만나보세요
             </p>
           </div>
-          <div className="mt-1.5 flex gap-2 shrink-0">
-            <button
-              type="button"
-              aria-label="이전"
-              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border-[1.5px] border-card-border text-[18px] font-light text-text-secondary transition hover:bg-bg"
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              aria-label="다음"
-              className="flex h-[38px] w-[38px] items-center justify-center rounded-full bg-primary text-[18px] font-light text-text-on-dark transition hover:brightness-[1.08]"
-            >
-              ›
-            </button>
-          </div>
+          <a
+            href="#features"
+            className="hidden shrink-0 items-center gap-1 text-[14px] font-semibold text-primary transition hover:gap-2 md:inline-flex"
+          >
+            더 보기 →
+          </a>
         </div>
 
         {/* Cards */}
@@ -83,7 +73,7 @@ export function Features() {
                   {d.city}
                 </h3>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-[5px] text-[13px] text-text-muted">
+                  <div className="flex items-center gap-[5px] text-[13px] text-text-secondary">
                     <PinIcon />
                     <span>{d.country}</span>
                   </div>
