@@ -9,8 +9,8 @@ const LINKS = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-card-border bg-card/85 backdrop-blur supports-[backdrop-filter]:bg-card/70">
-      <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-6 sm:px-8">
+    <header className="sticky top-0 z-50 border-b border-card-border bg-card/88 backdrop-blur supports-[backdrop-filter]:bg-card/80">
+      <div className="mx-auto flex h-[68px] w-full max-w-[1200px] items-center justify-between px-6 sm:px-10">
         <Link
           href="/"
           className="flex items-center gap-2.5 text-primary"
@@ -22,9 +22,9 @@ export function Nav() {
             width={32}
             height={32}
             priority
-            className="h-8 w-8 rounded-md"
+            className="h-8 w-8 rounded-[8px]"
           />
-          <span className="font-editorial text-2xl font-light tracking-tight">
+          <span className="text-[21px] font-light tracking-[-0.025em]">
             TripMate
           </span>
         </Link>
@@ -43,7 +43,7 @@ export function Nav() {
 
         <a
           href="#download"
-          className="rounded-pill bg-primary px-5 py-2.5 text-[14px] font-semibold text-text-on-dark shadow-primary transition-transform hover:-translate-y-0.5"
+          className="rounded-pill bg-primary px-6 py-[11px] text-[14px] font-semibold text-text-on-dark shadow-primary transition hover:brightness-[1.08] hover:-translate-y-px"
         >
           앱 다운로드
         </a>

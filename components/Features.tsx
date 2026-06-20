@@ -1,88 +1,97 @@
-type Feature = {
-  num: string;
-  title: string;
-  desc: string;
-  accent: "primary" | "accent" | "olive" | "mute-gold";
+import Image from "next/image";
+
+type Dest = {
+  city: string;
+  country: string;
+  rate: string;
+  src: string;
 };
 
-const FEATURES: Feature[] = [
-  {
-    num: "01",
-    title: "AI 스마트 매칭",
-    desc: "여행지·날짜·스타일을 분석해 23,000명 중 나와 딱 맞는 메이트를 추천해 드려요.",
-    accent: "primary",
-  },
-  {
-    num: "02",
-    title: "안전 인증 시스템",
-    desc: "SNS 인증 + 본인 확인으로 신뢰할 수 있는 메이트만 매칭돼요. 안심하고 사용하세요.",
-    accent: "accent",
-  },
-  {
-    num: "03",
-    title: "실시간 채팅",
-    desc: "매칭 후 바로 일정을 공유하고 채팅으로 세부 계획을 맞춰가세요.",
-    accent: "olive",
-  },
-  {
-    num: "04",
-    title: "여행 커뮤니티",
-    desc: "여행 후기, 꿀팁, 동행 모집까지. 같은 목적지를 꿈꾸는 여행자들을 만나보세요.",
-    accent: "mute-gold",
-  },
+const DESTS: Dest[] = [
+  { city: "이스탄불", country: "터키", rate: "4.9", src: "/dest/istanbul.jpg" },
+  { city: "오사카", country: "일본", rate: "4.7", src: "/dest/osaka.jpg" },
+  { city: "파리", country: "프랑스", rate: "4.7", src: "/dest/paris.jpg" },
 ];
 
-const ACCENT_CLASS: Record<Feature["accent"], string> = {
-  primary: "text-primary",
-  accent: "text-accent",
-  olive: "text-olive",
-  "mute-gold": "text-mute-gold",
-};
+function PinIcon() {
+  return (
+    <svg
+      aria-hidden
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+    >
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+      <circle cx="12" cy="9" r="2.5" />
+    </svg>
+  );
+}
 
 export function Features() {
   return (
-    <section
-      id="features"
-      className="bg-bg py-24 sm:py-32 lg:py-40"
-    >
-      <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8">
-        {/* Section header */}
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
-              왜 TripMate인가요
-            </span>
-            <h2 className="mt-5 font-editorial text-[clamp(2rem,4vw,3.25rem)] font-light leading-[1.15] tracking-tight text-text-primary">
-              여행의 모든 걱정,
-              <br />
-              TripMate가 해결해드려요.
+    <section id="features" className="bg-card pb-[88px] pt-20">
+      <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-10">
+        {/* Header */}
+        <div className="mb-11 flex items-start justify-between gap-6">
+          <div>
+            <h2 className="m-0 mb-2 text-[34px] font-extrabold tracking-[-0.02em] text-text-primary">
+              인기 여행지
             </h2>
+            <p className="m-0 text-[15px] text-text-muted">
+              나와 함께 떠날 메이트를 TripMate에서 만나보세요
+            </p>
           </div>
-          <p className="text-[17px] leading-[1.8] text-text-secondary lg:col-span-6 lg:col-start-7 lg:self-end">
-            낯선 사람과의 동행이 걱정되셨나요? TripMate는 안전한 인증과
-            AI 매칭으로, 처음 만나는 사람도 가까운 친구처럼 함께 떠날 수 있게
-            도와드립니다.
-          </p>
+          <div className="mt-1.5 flex gap-2 shrink-0">
+            <button
+              type="button"
+              aria-label="이전"
+              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border-[1.5px] border-card-border text-[18px] font-light text-text-secondary transition hover:bg-bg"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              aria-label="다음"
+              className="flex h-[38px] w-[38px] items-center justify-center rounded-full bg-primary text-[18px] font-light text-text-on-dark transition hover:brightness-[1.08]"
+            >
+              ›
+            </button>
+          </div>
         </div>
 
         {/* Cards */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-4 lg:gap-7">
-          {FEATURES.map((f) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {DESTS.map((d) => (
             <article
-              key={f.num}
-              className="group flex flex-col gap-5 rounded-lg border border-card-border bg-card p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              key={d.city}
+              className="group flex flex-1 flex-col overflow-hidden rounded-[18px] bg-card shadow-[0_4px_20px_rgba(28,43,58,0.09)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(28,43,58,0.14)]"
             >
-              <span
-                className={`font-editorial text-4xl font-light leading-none ${ACCENT_CLASS[f.accent]}`}
-              >
-                {f.num}
-              </span>
-              <h3 className="text-[19px] font-semibold leading-tight text-text-primary">
-                {f.title}
-              </h3>
-              <p className="text-[15px] leading-[1.7] text-text-secondary">
-                {f.desc}
-              </p>
+              <div className="relative h-[224px] w-full overflow-hidden">
+                <Image
+                  src={d.src}
+                  alt={d.city}
+                  fill
+                  sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-[400ms] group-hover:scale-[1.04]"
+                />
+              </div>
+              <div className="px-5 py-[18px]">
+                <h3 className="m-0 mb-2 text-[16px] font-bold text-text-primary">
+                  {d.city}
+                </h3>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-[5px] text-[13px] text-text-muted">
+                    <PinIcon />
+                    <span>{d.country}</span>
+                  </div>
+                  <span className="rounded-pill bg-primary px-[11px] py-1 text-[12px] font-bold tracking-[0.02em] text-text-on-dark">
+                    ★ {d.rate}
+                  </span>
+                </div>
+              </div>
             </article>
           ))}
         </div>

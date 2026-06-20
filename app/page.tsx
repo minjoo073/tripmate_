@@ -4,7 +4,6 @@ import { Hero } from "@/components/Hero";
 import { StatsBar } from "@/components/StatsBar";
 import { Features } from "@/components/Features";
 import { Steps } from "@/components/Steps";
-import { Reviews } from "@/components/Reviews";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 
@@ -23,7 +22,6 @@ export default function Page() {
         <StatsBar />
         <Features />
         <Steps />
-        <Reviews />
         <FinalCTA />
       </main>
       <Footer />
